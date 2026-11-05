@@ -19,6 +19,11 @@ export default function TypeFilter({ value, onChange }: TypeFilterProps) {
         <div role="tablist" className="tabs tabs-box w-fit">
             {options.map((option) => (
                 <button
+                    key={option.value}
+                    type="button"
+                    role="tab"
+                    className={`tab ${value === option.value ? "tab-active" : ""}`}
+                    onClick={() => onChange(option.value)}
                 >
                     {option.label}
                 </button>
